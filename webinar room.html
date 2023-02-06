@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <title>Webinar Room</title>
+<head>
+  <style>
+    /* CSS styles for the webinar room */
+    .webinar-room {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Styles for the pop-up */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .popup-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      width: 80%;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="webinar-room">
+    <h2>Welcome to Our Business Opportunity Briefing</h2>
+    <h3>There's a Special Offer for you when you stay to the End</h3>
+    <div class="video-container">
+      <!-- YouTube video embed code -->
+      <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <a href="#" class="contact-button">Talk to Our Consultant</a>
+  </div>
+
+  <!-- Pop-up HTML code -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <p>Do you want to ask questions?</p>
+      <a href="#" class="contact-button">Yes</a>
+      <a href="#" class="popup-close">No</a>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code to show the pop-up
+    var video = document.querySelector("iframe");
+    video.addEventListener("ended", function() {
+      document.getElementById("popup").style.display = "block";
+    });
+
+    // JavaScript code to close the pop-up
+    var closeBtn = document.querySelector(".popup-close");
+    closeBtn.addEventListener("click", function() {
+      document.getElementById("popup").style.display = "none";
+    });
+  </script>
+</body>
+</html>

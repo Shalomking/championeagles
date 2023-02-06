@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Collection Page</title>
+    <style>
+      /* Add your CSS styling here */
+      /* Make sure it's responsive */
+      /* Example */
+      form {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        form {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form id="lead-form">
+      <h1>REGISTER FOR THE BUSINESS BRIEFING HERE</h1>
+      <h3>HURRY NOW! LIMITED SLOTS AVAILABLE</h3>
+      <input type="text" name="full-name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Phone number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="location" placeholder="Location" required>
+      <input type="submit" value="Join Webinar" onclick="window.location.href='webinar room.html'">
+    </form>
+    <script>
+      /* Add your JavaScript code here */
+      /* Example */
+      const form = document.getElementById("lead-form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        console.log(data);
+        // Send data to the server using an AJAX request
+      });
+    </script>
+  </body>
+</html>
